@@ -6,6 +6,7 @@ openstack-salstack
 
 ##2. Mô hình Lab 
 Mô hình sử dụng Neutron để cung cấp dịch vụ mạng cho máy ảo (Sử dụng ML2 plugin và GRE tunnel)
+
  **2.1 Controller Node:**
 - Openstack Controller
 - Saltmaster
@@ -38,9 +39,7 @@ eth2 | Internet Access
 ##3. Các bước cài đặt
 Cách cài đặt salt-master và salt-minion [tham khảo tại đây](https://github.com/d0m0reg00dthing/saltstack)
 
-**3.1 Cấu hình Saltstack**
-
-Controller Node:
+**3.1 Controller Node:**
 **/etc/salt/master**
 ```shell
 interface: 0.0.0.0
@@ -60,7 +59,7 @@ service salt-master restart
 service salt-minion restart
 ```
 
-Compute Nodes
+**3.2 Compute Nodes**
 **/etc/salt/minion**
 ```shell
 master: 10.0.0.11
@@ -80,17 +79,18 @@ Kiểm tra xem master và minion thông nhau chưa
 ```shell
 salt '*' test.ping
 ```
-Cài đặt Openstack
+###4. Sử dụng saltstack-script
 
-Tải file salt.openstack.tar.bz2 đặt tại thư mục /srv (Phải đặt đúng thư mục này)
+**4.1 Tải file salt.openstack.tar.bz2**
 ```shell
- cd /srv
- tar -xjvf salt.openstack.tar.bz2
+cd /srv
+wget https://github.com/d0m0reg00dthing/openstack-salstack/blob/master/salt.openstack.tar.bz2?raw=true
+tar -xjvf salt.openstack.tar.bz2
 ```
 
-Cách 1: Cài đặt & cấu hình từng dịch vụ
-Cài đặt Controller Node
-Trên Controller Node
+**4.2 Cách 1: Cài đặt & cấu hình từng dịch vụ**
+###Tất cả command đều thực thi trên Controller Node
+**Cài đặt Controller Node**
 ```shell
 # Thêm 1 record vào file /etc/hosts
 salt 'controller' state.sls host -l debug
@@ -125,8 +125,7 @@ salt 'controller' state.sls horizon -l debug
 salt 'controller' state.sls neutron.api -l debug
 ```
 
-Cài đặt cho các compute node
-Trên Controller Node
+**Cài đặt cho các compute node**
 ```shell
 # Tạo record trong /etc/hosts
 salt 'compute*' state.sls hosts -l debug
