@@ -1,11 +1,11 @@
 openstack-salstack
 ==================
-Giới thiệu
+1. Giới thiệu
 
 Đây là 1 script nhỏ để giúp cho việc cài đặt Openstack Multi-Node đơn giản hơn, ít nhàm chán hơn, quản lý tập trung dễ dàng hơn... và còn nhiều cái hơn nữa. Ý tưởng là sử dụng saltstack (http://www.saltstack.com/) để quản lý cấu hình tập trung. Chúng ta chỉ chỉnh sửa cấu hình tại Saltstack master và áp cấu hình lên tất cả các Node trong mô hình của mình. Mỗi khi thay đổi cấu hình ta cũng chỉ cần sửa trên Master và lại áp cấu hình mới này lên các Node theo ý muốn sau đó restart lại các service tương ứng, mọi việc sẽ được thực hiện trong vòng chưa đầy 1 nốt nhạc thay vì phải SSH lên từng Node và sửa.
 
-I. Mô hình Lab 
- 1. ### Controller Node:
+2. Mô hình Lab 
+ 2.1 Controller Node:
 - Đóng vai trò Openstack Controller
 - Saltmaster
 - Saltminion
