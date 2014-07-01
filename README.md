@@ -11,7 +11,7 @@ Controller Node:
 - Saltminion
 
 Hostname | controller
---------  ----------
+-------- | ----------
 eth0 | 10.0.0.11
 eth1 | Internet Access
 OS | Ubuntu 14.04 amd64
@@ -21,12 +21,14 @@ OS | Ubuntu 14.04 amd64
 - Saltminion
 
 Hostname | compute1
+-------- | --------
 eth0 | 10.0.0.21
 eth1 | 10.0.1.21
 eth2 | Internet Access
 /dev/sdb | cinder-volume
 
 Hostname | compute2
+-------- | --------
 eth0 | 10.0.0.31
 eth1 | 10.0.1.31
 eth2 | Internet Access
