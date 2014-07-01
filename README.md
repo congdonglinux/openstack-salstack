@@ -53,7 +53,7 @@ file_roots:
 ```shell
 master: 10.0.0.11
 ```
-Restart lại các dịch vụ
+**Restart lại các dịch vụ**
 ```shell
 service salt-master restart
 service salt-minion restart
@@ -68,14 +68,15 @@ Restart lại dịch vụ
 ```shell
 service salt-minion restart
 ```
-Trên Controller Node 
+
+**Accept Minion key (Thực thi trên Controller)**
 ```shell
 salt-key -L
 
 salt-key -A
 (Chọn Y cho tất cả câu trả lời)
 ```
-Kiểm tra xem master và minion thông nhau chưa
+**Kiểm tra xem master và minion thông nhau chưa**
 ```shell
 salt '*' test.ping
 ```
@@ -146,14 +147,13 @@ salt 'compute*' state.sls cinder.volume -l debug
 salt 'compute*' state.sls neutron.network -l debug
 ```
 
-Cách 2: Sử dụng 1 command cài đặt tất cả các Node
+**4.2 Cách 2: Sử dụng 1 command cài đặt tất cả các Node**
 Trên Controller Node
 ```shell
 salt '*' state.highstate -l debug
 ```
 
-Kiểm tra sau khi cài đặt
-Trên Controller Node
+**4.3 Kiểm tra sau khi cài đặt**
 ```shell
 source /root/openrc
 
@@ -178,6 +178,6 @@ nova image-list
 cinder list
 ```
 
-Kết thúc
-Lần đầu viết script cho Saltstack, còn nhiều chỗ trình bày chưa thật sự đẹp nhưng quan trọng là script chạy được (ít ra là những lần mình test trên 2 Node/3 Node đều chạy). Hạn chế của script còn rất nhiều, tương lai mình sẽ fix và thêm 1 vài chức năng nữa. 
-Mục đích mình shared script này không phải để mọi người kéo về và gõ cái đống command trên mà mình muốn mọi người sẽ tìm hiểu về nó (saltstack) đê chỉnh sửa/viết thêm những script phù hợp với công việc cuả từng người để việc triên khai Openstack ít nhàm chán hơn. Trong quá trình cài đặt nếu có lỗi gì mọi người có thể liên lạc với mình qua FB: https://www.facebook.com/cucxabong
+###5. Kết thúc
+- Lần đầu viết script cho Saltstack, còn nhiều chỗ trình bày chưa thật sự đẹp nhưng quan trọng là script chạy được (ít ra là những lần mình test trên 2 Node/3 Node đều chạy). Hạn chế của script còn rất nhiều, tương lai mình sẽ fix và thêm 1 vài chức năng nữa. 
+- Mục đích mình shared script này không phải để mọi người kéo về và gõ cái đống command trên mà mình muốn mọi người sẽ tìm hiểu về nó (saltstack) đê chỉnh sửa/viết thêm những script phù hợp với công việc cuả từng người để việc triên khai Openstack ít nhàm chán hơn. Trong quá trình cài đặt nếu có lỗi gì mọi người có thể liên lạc với mình qua FB: https://www.facebook.com/cucxabong
