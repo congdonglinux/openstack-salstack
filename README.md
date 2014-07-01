@@ -11,6 +11,7 @@ Controller Node:
 - Saltminion
 
 Hostname | controller
+--------  ----------
 eth0 | 10.0.0.11
 eth1 | Internet Access
 OS | Ubuntu 14.04 amd64
