@@ -121,7 +121,7 @@ controller:
 ###Tất cả command đều thực thi trên Controller Node
 ```shell
 cd /srv
-wget https://github.com/d0m0reg00dthing/openstack-salstack/blob/master/salt.openstack.tar.bz2?raw=true
+wget https://github.com/d0m0reg00dthing/openstack-salstack/blob/master/salt.openstack.tar.bz2?raw=true -O salt.openstack.tar.bz2
 tar -xjvf salt.openstack.tar.bz2
 
 # Cập nhật cấu hình mới cho salt-stack (Thực thi trên Controller Node)
@@ -129,7 +129,7 @@ salt '*' saltutil.refresh_pillar
 
 ```
 
-**Thay đổi thông tin cấu hình: /srv/pillar/config.sls**
+**Thay đổi thông tin cấu hình (Nếu có nhu cầu): /srv/pillar/config.sls**
 
 Tên | Ý nghĩa
 --------- | --------
