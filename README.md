@@ -6,7 +6,8 @@ openstack-salstack
 
 ##2. Mô hình Lab 
 Mô hình sử dụng Neutron để cung cấp dịch vụ mạng cho máy ảo (Sử dụng ML2 plugin và GRE tunnel)
- ** Controller Node:**
+
+**Controller Node:**
 - Openstack Controller
 - Saltmaster
 - Saltminion
@@ -17,7 +18,7 @@ eth0 | 10.0.0.11
 eth1 | Internet Access
 OS | Ubuntu 14.04 amd64
 
- **2.2 Compute nodes**
+**Compute nodes**
 - Openstack Compute & Network
 - Saltminion
 
