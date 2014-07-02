@@ -1,5 +1,3 @@
-openstack-salstack
-==================
 ##1. Giới thiệu
 
 Đây là 1 script nhỏ để giúp cho việc cài đặt Openstack Multi-Node đơn giản hơn, ít nhàm chán hơn, quản lý tập trung dễ dàng hơn... và còn nhiều cái hơn nữa. Ý tưởng là sử dụng [saltstack](http://www.saltstack.com/) để quản lý cấu hình tập trung. Chúng ta chỉ chỉnh sửa cấu hình tại Saltstack master và áp cấu hình lên tất cả các Node trong mô hình của mình. Mỗi khi thay đổi cấu hình ta cũng chỉ cần sửa trên Master và lại áp cấu hình mới này lên các Node theo ý muốn sau đó restart lại các service tương ứng, mọi việc sẽ được thực hiện trong vòng chưa đầy 1 nốt nhạc thay vì phải SSH lên từng Node và sửa.
@@ -64,7 +62,7 @@ service salt-minion restart
 ```shell
 master: 10.0.0.11
 ```
-Restart lại dịch vụ
+**Restart lại dịch vụ**
 ```shell
 service salt-minion restart
 ```
@@ -80,16 +78,48 @@ salt-key -A
 ```shell
 salt '*' test.ping
 ```
-###4. Sử dụng saltstack-script
-
-**4.1 Tải file salt.openstack.tar.bz2**
+##4. Sử dụng saltstack-script
+###Tất cả command đều thực thi trên Controller Node
+**Tải file salt.openstack.tar.bz2**
 ```shell
 cd /srv
 wget https://github.com/d0m0reg00dthing/openstack-salstack/blob/master/salt.openstack.tar.bz2?raw=true
 tar -xjvf salt.openstack.tar.bz2
 ```
 
-**4.2 Cách 1: Cài đặt & cấu hình từng dịch vụ**
+Thay đổi thông tin cấu hình
+/srv/pillar/config.sls
+Tên | Ý nghĩa
+--- | ------
+controller_private_ip | IP sử dụng cung cấp API
+EXTERNAL_INTERFACE | Interface Public
+MYSQL_ROOT | Mật khẩu root MySQL
+ADMIN_TOKEN | Keystone Admin Token
+RABBIT_PASS | Rabbit guest password
+KEYSTONE_DBPASS | Keystone database password
+USER_DEMO_PASS | user 'demo' password
+USER_ADMIN_PASS | user 'admin' password
+GLANCE_DBPASS | Glance database password
+GLANCE_PASS | user 'glance' password
+NOVA_DBPASS | Nova database password
+NOVA_PASS | user 'nova' password
+CINDER_DBPASS | Cinder database password
+CINDER_PASS | user 'cinder' password
+NEUTRON_DBPASS | Neutron database password
+NEUTRON_PASS | user 'neutron' password
+METADATA_SHARED_SECRET | Metadata secret
+KEYSTONE_SERVER | Identity Service IP
+MYSQL_SERVER_IP | MySQL Server IP
+NOVA_API_SERVER | Compute Service IP
+RABBITMQ_SERVER | Rabbitmq-server IP
+GLANCE_API_SERVER | Images Service IP
+CINDER_API_SERVER | Block Service IP
+METADATA_SERVER | Metadata Service IP
+NEUTRON_API_SERVER | Network Service IP
+NTP_UPDATE_SERVER | NTP update IP
+
+
+**Cách 1: Cài đặt & cấu hình từng dịch vụ**
 ###Tất cả command đều thực thi trên Controller Node
 **Cài đặt Controller Node**
 ```shell
