@@ -90,8 +90,8 @@ Rejected Keys:
 salt-key -A
 (Chọn Y cho tất cả câu trả lời)
 ```
+**Kiểm tra lại danh sách key**
 ```shell
-# Kiểm tra lại danh sách key
 salt-key -L
 ```
 **Kết quả**
