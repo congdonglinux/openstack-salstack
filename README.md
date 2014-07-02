@@ -75,8 +75,8 @@ service salt-minion restart
 # List tất cả minion's key
 salt-key -L
 ```
+**Kết quả**
 ```shell
-# Kết quả
 Accepted Keys:
 Unaccepted Keys:
 compute1
@@ -93,8 +93,8 @@ salt-key -A
 # Kiểm tra lại danh sách key
 salt-key -L
 ```
+**Kết quả**
 ```shell
-# Kết quả
 Accepted Keys:
 compute1
 compute2
@@ -105,8 +105,10 @@ Rejected Keys:
 **Kiểm tra xem master và minion thông nhau chưa**
 ```shell
 salt '*' test.ping
+```
 
-# Kết quả
+**Kết quả**
+```shell
 compute1:
     True
 compute2:
