@@ -19,6 +19,7 @@ Hostname | controller
 eth0 | 10.0.0.11
 eth1 | Internet Access
 OS | Ubuntu 14.04 amd64
+RAM | 2046MB
 
 **Compute nodes**
 - Openstack Compute & Network
@@ -29,6 +30,7 @@ OS | Ubuntu 14.04 amd64
 eth0 | 10.0.0.21
 eth1 | 10.0.1.21
 eth2 | Internet Access
+RAM  | 2048MB
 **/dev/sdb** | cinder-volume
 
 **Hostname** | compute2
@@ -36,6 +38,7 @@ eth2 | Internet Access
 eth0 | 10.0.0.31
 eth1 | 10.0.1.31
 eth2 | Internet Access
+RAM  | 2048MB
 **/dev/sdb** | cinder-volume
 
 ##3. Các bước cài đặt
