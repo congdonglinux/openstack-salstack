@@ -92,31 +92,31 @@ tar -xjvf salt.openstack.tar.bz2
 Tên | Ý nghĩa
 --------- | --------
 **controller_private_ip** | IP sử dụng cung cấp API
-**EXTERNAL_INTERFACE | Interface Public
+**EXTERNAL_INTERFACE** | Interface Public
 **MYSQL_ROOT** | Mật khẩu root MySQL
 **ADMIN_TOKEN** | Keystone Admin Token
 **RABBIT_PASS** | Rabbit guest password
-KEYSTONE_DBPASS | Keystone database password
-USER_DEMO_PASS | user 'demo' password
-USER_ADMIN_PASS | user 'admin' password
-GLANCE_DBPASS | Glance database password
-GLANCE_PASS | user 'glance' password
-NOVA_DBPASS | Nova database password
-NOVA_PASS | user 'nova' password
-CINDER_DBPASS | Cinder database password
-CINDER_PASS | user 'cinder' password
-NEUTRON_DBPASS | Neutron database password
-NEUTRON_PASS | user 'neutron' password
-METADATA_SHARED_SECRET | Metadata secret
-KEYSTONE_SERVER | Identity Service IP
-MYSQL_SERVER_IP | MySQL Server IP
-NOVA_API_SERVER | Compute Service IP
-RABBITMQ_SERVER | Rabbitmq-server IP
-GLANCE_API_SERVER | Images Service IP
-CINDER_API_SERVER | Block Service IP
-METADATA_SERVER | Metadata Service IP
-NEUTRON_API_SERVER | Network Service IP
-NTP_UPDATE_SERVER | NTP update IP
+**KEYSTONE_DBPASS** | Keystone database password
+**USER_DEMO_PASS** | user 'demo' password
+**USER_ADMIN_PASS** | user 'admin' password
+**GLANCE_DBPASS** | Glance database password
+**GLANCE_PASS** | user 'glance' password
+**NOVA_DBPASS** | Nova database password
+**NOVA_PASS** | user 'nova' password
+**CINDER_DBPASS** | Cinder database password
+**CINDER_PASS** | user 'cinder' password
+**NEUTRON_DBPASS** | Neutron database password
+**NEUTRON_PASS** | user 'neutron' password
+**METADATA_SHARED_SECRET** | Metadata secret
+**KEYSTONE_SERVER** | Identity Service IP
+**MYSQL_SERVER_IP** | MySQL Server IP
+**NOVA_API_SERVER** | Compute Service IP
+**RABBITMQ_SERVER** | Rabbitmq-server IP
+**GLANCE_API_SERVER** | Images Service IP
+**CINDER_API_SERVER** | Block Service IP
+**METADATA_SERVER** | Metadata Service IP
+**NEUTRON_API_SERVER** | Network Service IP
+**NTP_UPDATE_SERVER** | NTP update IP
 
 
 **Cách 1: Cài đặt & cấu hình từng dịch vụ**
