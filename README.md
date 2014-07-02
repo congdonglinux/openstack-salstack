@@ -250,5 +250,5 @@ cinder list
 ```
 
 ###5. Kết thúc
-- Lần đầu viết script cho Saltstack, còn nhiều chỗ trình bày chưa thật sự đẹp nhưng quan trọng là script chạy được (ít ra là những lần mình test trên 2 Node/3 Node đều chạy). Hạn chế của script còn rất nhiều, tương lai mình sẽ fix và thêm 1 vài chức năng nữa. 
+- Lần đầu viết script cho Saltstack, còn nhiều chỗ trình bày chưa thật sự đẹp nhưng quan trọng là script chạy được (ít ra là những lần mình test trên 2 Node/3 Node đều chạy). 
 - Mục đích mình shared script này không phải để mọi người kéo về và gõ cái đống command trên mà mình muốn mọi người sẽ tìm hiểu về nó (saltstack) đê chỉnh sửa/viết thêm những script phù hợp với công việc cuả từng người để việc triên khai Openstack ít nhàm chán hơn. Trong quá trình cài đặt nếu có lỗi gì mọi người có thể liên lạc với mình qua FB: https://www.facebook.com/cucxabong
