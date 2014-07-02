@@ -118,8 +118,7 @@ Tên | Ý nghĩa
 **NTP_UPDATE_SERVER** | NTP update IP
 
 
-**Cách 1: Cài đặt & cấu hình từng dịch vụ**
-###Tất cả command đều thực thi trên Controller Node
+##Cách 1: Cài đặt & cấu hình từng dịch vụ
 **Cài đặt Controller Node**
 ```shell
 # Thêm 1 record vào file /etc/hosts
@@ -176,13 +175,13 @@ salt 'compute*' state.sls cinder.volume -l debug
 salt 'compute*' state.sls neutron.network -l debug
 ```
 
-**4.2 Cách 2: Sử dụng 1 command cài đặt tất cả các Node**
+##Cách 2: Sử dụng 1 command cài đặt tất cả các Node**
 Trên Controller Node
 ```shell
 salt '*' state.highstate -l debug
 ```
 
-**4.3 Kiểm tra sau khi cài đặt**
+##Kiểm tra sau khi cài đặt**
 ```shell
 source /root/openrc
 
