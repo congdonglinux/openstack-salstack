@@ -220,7 +220,6 @@ salt 'compute*' state.sls neutron.network -l debug
 ```
 
 ##Cách 2: Sử dụng 1 command cài đặt tất cả các Node
-**Controller Node**
 ```shell
 salt '*' state.highstate -l debug
 ```
