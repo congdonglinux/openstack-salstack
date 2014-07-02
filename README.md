@@ -70,9 +70,10 @@ master: 10.0.0.11
 service salt-minion restart
 ```
 
-**Accept Minion key (Thực thi trên Controller)**
+###Kiểm tra sau khi cài đặt (tất cả command thực thi trên Controller)
+
+**List tất cả minion's key**
 ```shell
-# List tất cả minion's key
 salt-key -L
 ```
 **Kết quả**
@@ -84,8 +85,8 @@ compute2
 controller
 Rejected Keys:
 ```
+**Accept tất cả các key**
 ```shell
-# Accept tất cả các key
 salt-key -A
 (Chọn Y cho tất cả câu trả lời)
 ```
