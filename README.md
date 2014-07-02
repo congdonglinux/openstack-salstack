@@ -39,7 +39,7 @@ eth2 | Internet Access
 ##3. Các bước cài đặt
 Cách cài đặt salt-master và salt-minion [tham khảo tại đây](https://github.com/d0m0reg00dthing/saltstack)
 
-**3.1 Controller Node:**
+###Controller Node
 **/etc/salt/master**
 ```shell
 interface: 0.0.0.0
@@ -59,7 +59,7 @@ service salt-master restart
 service salt-minion restart
 ```
 
-**3.2 Compute Nodes**
+###Compute Nodes
 **/etc/salt/minion**
 ```shell
 master: 10.0.0.11
