@@ -22,19 +22,19 @@ OS | Ubuntu 14.04 amd64
 - Openstack Compute & Network
 - Saltminion
 
-Hostname | compute1
+**Hostname** | compute1
 -------- | --------
 eth0 | 10.0.0.21
 eth1 | 10.0.1.21
 eth2 | Internet Access
-/dev/sdb | cinder-volume
+**/dev/sdb** | cinder-volume
 
-Hostname | compute2
+**Hostname** | compute2
 -------- | --------
 eth0 | 10.0.0.31
 eth1 | 10.0.1.31
 eth2 | Internet Access
-/dev/sdb | cinder-volume
+**/dev/sdb** | cinder-volume
 
 ##3. Các bước cài đặt
 Cách cài đặt salt-master và salt-minion [tham khảo tại đây](https://github.com/d0m0reg00dthing/saltstack)
