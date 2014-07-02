@@ -3,7 +3,10 @@
 Đây là 1 script nhỏ để giúp cho việc cài đặt Openstack Multi-Node đơn giản hơn, ít nhàm chán hơn, quản lý tập trung dễ dàng hơn... và còn nhiều cái hơn nữa. Ý tưởng là sử dụng [saltstack](http://www.saltstack.com/) để quản lý cấu hình tập trung. Chúng ta chỉ chỉnh sửa cấu hình tại Saltstack master và áp cấu hình lên tất cả các Node trong mô hình của mình. Mỗi khi thay đổi cấu hình ta cũng chỉ cần sửa trên Master và lại áp cấu hình mới này lên các Node theo ý muốn sau đó restart lại các service tương ứng, mọi việc sẽ được thực hiện trong vòng chưa đầy 1 nốt nhạc thay vì phải SSH lên từng Node và sửa.
 
 ##2. Mô hình Lab 
-Mô hình sử dụng Neutron để cung cấp dịch vụ mạng cho máy ảo (Sử dụng ML2 plugin và GRE tunnel)
+OS | Ubuntu Server 14.04 amd64
+---|--------------
+Network | GRE Tunnel
+
 
 **Controller Node:**
 - Openstack Controller
@@ -69,14 +72,39 @@ service salt-minion restart
 
 **Accept Minion key (Thực thi trên Controller)**
 ```shell
+# List tất cả minion's key
 salt-key -L
+Accepted Keys:
+Unaccepted Keys:
+compute1
+compute2
+controller
+Rejected Keys:
 
+# Accept tất cả các key
 salt-key -A
 (Chọn Y cho tất cả câu trả lời)
+
+# Kiểm tra lại danh sách key
+salt-key -L
+Accepted Keys:
+compute1
+compute2
+controller
+Unaccepted Keys:
+Rejected Keys:
 ```
 **Kiểm tra xem master và minion thông nhau chưa**
 ```shell
 salt '*' test.ping
+
+# Kết quả
+compute1:
+    True
+compute2:
+    True
+controller:
+    True
 ```
 #4. Sử dụng saltstack-script
 ###Tất cả command đều thực thi trên Controller Node
@@ -84,6 +112,10 @@ salt '*' test.ping
 cd /srv
 wget https://github.com/d0m0reg00dthing/openstack-salstack/blob/master/salt.openstack.tar.bz2?raw=true
 tar -xjvf salt.openstack.tar.bz2
+
+# Cập nhật cấu hình mới cho salt-stack (Thực thi trên Controller Node)
+salt '*' saltutil.refresh_pillar
+
 ```
 
 **Thay đổi thông tin cấu hình: /srv/pillar/config.sls**
