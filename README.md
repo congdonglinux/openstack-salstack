@@ -118,11 +118,12 @@ Tên | Ý nghĩa
 **NTP_UPDATE_SERVER** | NTP update IP
 
 
-##Cách 1: Cài đặt & cấu hình từng dịch vụ
-**Cài đặt Controller Node**
+##Cách 1: Cài đặt từng dịch vụ
+**Controller Node**
 ```shell
 # Thêm 1 record vào file /etc/hosts
 salt 'controller' state.sls host -l debug
+
 # Cài đặt ntp và sử dụng ntp.ubuntu.com làm update server
 salt 'controller' state.sls ntp -l debug
 
@@ -154,7 +155,7 @@ salt 'controller' state.sls horizon -l debug
 salt 'controller' state.sls neutron.api -l debug
 ```
 
-**Cài đặt cho các compute node**
+**Compute Nodes**
 ```shell
 # Tạo record trong /etc/hosts
 salt 'compute*' state.sls hosts -l debug
@@ -175,13 +176,13 @@ salt 'compute*' state.sls cinder.volume -l debug
 salt 'compute*' state.sls neutron.network -l debug
 ```
 
-##Cách 2: Sử dụng 1 command cài đặt tất cả các Node**
-Trên Controller Node
+##Cách 2: Sử dụng 1 command cài đặt tất cả các Node
+**Controller Node**
 ```shell
 salt '*' state.highstate -l debug
 ```
 
-##Kiểm tra sau khi cài đặt**
+##Kiểm tra sau khi cài đặt
 ```shell
 source /root/openrc
 
