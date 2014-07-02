@@ -87,16 +87,15 @@ wget https://github.com/d0m0reg00dthing/openstack-salstack/blob/master/salt.open
 tar -xjvf salt.openstack.tar.bz2
 ```
 
-Thay đổi thông tin cấu hình
-/srv/pillar/config.sls
+**Thay đổi thông tin cấu hình: /srv/pillar/config.sls**
 
 Tên | Ý nghĩa
 --------- | --------
-controller_private_ip | IP sử dụng cung cấp API
-EXTERNAL_INTERFACE | Interface Public
-MYSQL_ROOT | Mật khẩu root MySQL
-ADMIN_TOKEN | Keystone Admin Token
-RABBIT_PASS | Rabbit guest password
+**controller_private_ip** | IP sử dụng cung cấp API
+**EXTERNAL_INTERFACE | Interface Public
+**MYSQL_ROOT** | Mật khẩu root MySQL
+**ADMIN_TOKEN** | Keystone Admin Token
+**RABBIT_PASS** | Rabbit guest password
 KEYSTONE_DBPASS | Keystone database password
 USER_DEMO_PASS | user 'demo' password
 USER_ADMIN_PASS | user 'admin' password
