@@ -78,9 +78,8 @@ salt-key -A
 ```shell
 salt '*' test.ping
 ```
-##4. Sử dụng saltstack-script
+#4. Sử dụng saltstack-script
 ###Tất cả command đều thực thi trên Controller Node
-**Tải file salt.openstack.tar.bz2**
 ```shell
 cd /srv
 wget https://github.com/d0m0reg00dthing/openstack-salstack/blob/master/salt.openstack.tar.bz2?raw=true
