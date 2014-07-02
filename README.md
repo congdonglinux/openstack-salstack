@@ -6,6 +6,7 @@
 OS | Ubuntu Server 14.04 amd64
 ---|--------------
 Network | GRE Tunnel
+Hypervisor | QEMU
 
 
 **Controller Node:**
