@@ -162,7 +162,7 @@ Tên | Ý nghĩa
 
 
 ##Cách 1: Cài đặt từng dịch vụ
-**Controller Node**
+**Cài đặt Controller Node**
 ```shell
 # Thêm 1 record vào file /etc/hosts
 salt 'controller' state.sls host -l debug
@@ -198,7 +198,7 @@ salt 'controller' state.sls horizon -l debug
 salt 'controller' state.sls neutron.api -l debug
 ```
 
-**Compute Nodes**
+**Cài đặt Compute Nodes**
 ```shell
 # Tạo record trong /etc/hosts
 salt 'compute*' state.sls hosts -l debug
