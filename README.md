@@ -89,6 +89,7 @@ tar -xjvf salt.openstack.tar.bz2
 
 Thay đổi thông tin cấu hình
 /srv/pillar/config.sls
+
 Tên | Ý nghĩa
 --------- | --------
 controller_private_ip | IP sử dụng cung cấp API
